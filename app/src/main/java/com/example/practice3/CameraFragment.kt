@@ -39,7 +39,8 @@ class CameraFragment : Fragment() {
 
         binding.makeNoteBtn.setOnClickListener {
             //SaveData
-            DateSaver.saveCurrentDateTimeToFile()
+            requireActivity().getExternalFilesDir(null)
+                ?.let { it1 -> DateSaver.saveCurrentDateTimeToFile(it1) }
 
         }
         binding.toRvFragment.setOnClickListener {

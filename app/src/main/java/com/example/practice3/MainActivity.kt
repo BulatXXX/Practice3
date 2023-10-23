@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
+        getExternalFilesDir(null)?.let { DateSaver.createFile(it) }
         setContentView(binding.root)
     }
 

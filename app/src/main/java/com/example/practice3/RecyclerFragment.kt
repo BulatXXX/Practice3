@@ -23,6 +23,7 @@ class RecyclerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentRecyclerBinding.inflate(layoutInflater,container,false)
+        items = requireActivity().getExternalFilesDir(null)?.let { DateSaver.readDataFromFile(it) }!!
         return binding.root
     }
 
@@ -31,7 +32,7 @@ class RecyclerFragment : Fragment() {
         binding.toCamFragment.setOnClickListener {
             Navigation.findNavController(requireView()).popBackStack()
         }
-        items = DateSaver.readDataFromFile()
+
         var adapter = ItemAdapter(items)
         binding.rv.adapter = adapter
         binding.rv.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
