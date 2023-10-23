@@ -7,14 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.DateSaver
-import com.example.practice3.databinding.FragmentCameraBinding
 import com.example.practice3.databinding.FragmentRecyclerBinding
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileReader
-import java.io.IOException
 
 class RecyclerFragment : Fragment() {
 

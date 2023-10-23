@@ -1,21 +1,13 @@
-package com.example
+package com.example.practice3
 
 import android.util.Log
-import com.example.practice3.Item
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileReader
-import java.io.FileWriter
-import java.io.IOException
 
 object DateSaver {
     private val dateList = ArrayList<Item>()
     fun saveCurrentDateTimeToFile() {
         getCurrentTime()
         getCurrentDate()
-        dateList.add(Item(time = getCurrentTime(), date = getCurrentDate()))
+        dateList.add(Item(time = getCurrentTime() , date = getCurrentDate()))
     }
 
     fun readDataFromFile(): List<Item> {

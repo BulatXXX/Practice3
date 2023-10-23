@@ -1,31 +1,16 @@
 package com.example.practice3
 
-import android.annotation.SuppressLint
-import android.hardware.Camera
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.camera.core.CameraInfo
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import com.example.DateSaver
 import com.example.practice3.databinding.FragmentCameraBinding
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileWriter
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
