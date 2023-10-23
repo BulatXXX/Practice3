@@ -1,14 +1,29 @@
 package com.example.practice3
 
 import android.util.Log
+import java.io.File
+import java.nio.file.Files
+import java.nio.file.Paths
 
 object DateSaver {
+
     private val dateList = ArrayList<Item>()
+    private const val FILE_NAME = "date.txt"
+    private const val DIR_NAME = "photos"
+    init {
+        createFile()
+    }
+
     fun saveCurrentDateTimeToFile() {
         getCurrentTime()
         getCurrentDate()
         dateList.add(Item(time = getCurrentTime() , date = getCurrentDate()))
     }
+
+    private fun createFile() {
+
+    }
+
 
     fun readDataFromFile(): List<Item> {
         return dateList
@@ -19,7 +34,6 @@ object DateSaver {
         val currentTimeMillis = System.currentTimeMillis()
         val currentTime = java.util.Date(currentTimeMillis)
         val dateFormat = java.text.SimpleDateFormat("dd.MM.yyyy")
-        Log.e("Boobs",dateFormat.format(currentTime))
         return dateFormat.format(currentTime)
     }
 
@@ -28,7 +42,6 @@ object DateSaver {
         val currentTimeMillis = System.currentTimeMillis()
         val currentTime = java.util.Date(currentTimeMillis)
         val timeFormat = java.text.SimpleDateFormat("HH:mm:ss")
-        Log.e("Boobs",timeFormat.format(currentTime))
         return timeFormat.format(currentTime)
     }
 }
